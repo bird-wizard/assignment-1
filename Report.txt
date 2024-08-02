@@ -1,0 +1,53 @@
+mario@mario-HP-Laptop-14-ep0xxx:~/assignment-1/lab/device_query$ ./device_query 
+Finding OpenCL Platforms...
+Found 2 platforms!
+Platform 0
+- Name: Intel(R) OpenCL
+- Version: OpenCL 3.0 LINUX
+- Vendor: Intel(R) Corporation
+- Num Devices: 1
+        Device: 0
+        - Name: 13th Gen Intel(R) Core(TM) i3-1315U
+        - Type: CPU
+        - Compute units: 8
+        - Global memory size: 12231725056 bytes (11665 MB)
+        - Max constant buffer size: 131072 bytes (0 MB)
+        - Max local memory size per Compute Unit: 32768 bytes (32 KB)
+        - Max Work Item Dimensions: 3
+        - Max Work Item size: 8192 x 8192 x 8192 
+        - Max group size: 8192
+
+Platform 1
+- Name: Intel(R) OpenCL Graphics
+- Version: OpenCL 3.0 
+- Vendor: Intel(R) Corporation
+- Num Devices: 1
+        Device: 0
+        - Name: Intel(R) UHD Graphics
+        - Type: GPU
+        - Compute units: 64
+        - Global memory size: 11025960960 bytes (10515 MB)
+        - Max constant buffer size: 4294959104 bytes (4095 MB)
+        - Max local memory size per Compute Unit: 65536 bytes (64 KB)
+        - Max Work Item Dimensions: 3
+        - Max Work Item size: 512 x 512 x 512 
+        - Max group size: 512
+
+
+mario@mario-HP-Laptop-14-ep0xxx:~/assignment-1/lab/raytracer_parallel$ make cpu
+./raytracer_parallel cpu
+
+========================================================
+Device: 13th Gen Intel(R) Core(TM) i3-1315U
+maTotal execution time (host + kernel): 1096.649 ms
+Image titled output_gpu.png has been created/modified and can now be viewed!
+========================================================
+
+mario@mario-HP-Laptop-14-ep0xxx:~/assignment-1/lab/raytracer_parallel$ make gpu
+./raytracer_parallel gpu
+
+========================================================
+Device: Intel(R) UHD Graphics
+Total execution time (host + kernel): 179.952 ms
+Image titled output_cpu.png has been created/modified and can now be viewed!
+========================================================

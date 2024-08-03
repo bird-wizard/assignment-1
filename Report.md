@@ -1,6 +1,7 @@
 # Lab 1 Report
 
 ## DEVICE QUERY
+```
 ~/.../lab/device_query $ ./device_query 
 Finding OpenCL Platforms...
 Found 1 platforms!
@@ -19,8 +20,10 @@ Platform 0
         - Max Work Item Dimensions: 3
         - Max Work Item size: 1024 x 1024 x 1024 
         - Max group size: 1024
+```
 
 ## Raytracer Sequential
+```
 ~/.../lab/raytracer_sequential $ make run
 ./raytracer_sequential
 Starting Sequential Ray Tracing...
@@ -28,8 +31,10 @@ Starting Sequential Ray Tracing...
 Single-Threaded Implementation on CPU
 Total execution time (host + kernel): 809.902 ms
 ========================================================
+```
 
 ## Raytracer Parallel
+```
 ~/.../lab/raytracer_parallel $ make gpu
 ./raytracer_parallel gpu
 
@@ -38,6 +43,7 @@ Device: Mali-G710 r0p0
 Total execution time (host + kernel): 313.442 ms
 Image titled output_gpu.png has been created/modified and can now be viewed!
 ========================================================
+```
 
 ### Thoughts on OpenCL
 What this lab was able to show me was that OpenCL allows the user to take advantage of dedicated hardware suited for parallel processing. This speeds up parallelizable equations that would normally take a sequential process longer to produce an output. The time difference in both Raytracer_Sequential and Raytracer_Parallel shows the level of efficiency between the two process methods.
@@ -50,6 +56,7 @@ https://youtu.be/ROTE_yjRi9s?list=PLiwt1iVUib9s6vyEqdpcgAq7NBRlp9mAY
 Here are the following outputs of including the "time" command when running "make run" with floats, integers, and doubles, in that order.
 
 ### Floats
+```
 ~/.../homework/vector_add $ time make run
 ./solution Dataset/0/input0.raw Dataset/0/input1.raw Dataset/0/output.raw output.raw
 !!SOLUTION IS CORRECT!!
@@ -75,8 +82,10 @@ Here are the following outputs of including the "time" command when running "mak
 real    0m6.981s
 user    0m5.876s
 sys     0m0.988s
+```
 
 ### Integers
+```
 ~/.../homework/vector_add $ time make run
 ./solution Dataset/0/input0.raw Dataset/0/input1.raw Dataset/0/output.raw output.raw
 !!SOLUTION IS CORRECT!!
@@ -102,9 +111,10 @@ sys     0m0.988s
 real    0m6.909s
 user    0m5.958s
 sys     0m0.843s
-
+```
 
 ### Double
+```
 ~/.../homework/vector_add $ time make run
 ./solution Dataset/0/input0.raw Dataset/0/input1.raw Dataset/0/output.raw output.raw
 !!SOLUTION IS CORRECT!!
@@ -130,6 +140,7 @@ sys     0m0.843s
 real    0m6.998s
 user    0m5.865s
 sys     0m0.934s
+```
 
 ### Conclusion
 I expected double to take slightly longer in processing due to its increased size, but I see no significant change in performance between integer, float, and double processing.
